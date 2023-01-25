@@ -1,0 +1,44 @@
+{
+  "itemsCart": [
+    {
+      "name": "My Christmas Pack",
+      "Stock": 80,
+      "price": "$71.20",
+      "type": "Pack",
+      "items": [
+        {
+          "name": "Cardboard Box",
+          "description": "container"
+        },
+        {
+          "name": "Unisex Short Sleeve T-Shirt",
+          "description": "Green, Small"
+        },
+        {
+          "name": "Basic Bottle",
+          "description": "Blue"
+        }
+      ]
+    },
+    {
+      "name": "Basic T-Shirt",
+      "Stock": 12,
+      "price": "$13.50",
+      "type": "Product"
+    },
+    {
+      "name": "Woman bottle",
+      "Stock": 25,
+      "price": "$36.50",
+      "type": "Product"
+    }
+  ],
+  "items": [
+    {
+      "name": "Unisex Short Sleeve T-Shirt",
+      "Stock": 24,
+      "price-range": "$10 - $24",
+      "type": "Product"
+    }
+  ]
+}
