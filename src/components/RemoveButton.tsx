@@ -1,15 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { CartContext } from "../App";
 
 interface Props {
   id: string;
 }
 
 function RemoveButton({ id }: Props) {
-  const { items } = useContext(CartContext);
-
   const removeItem = () => {};
   return (
     <IconButton aria-label="delete" size="small">

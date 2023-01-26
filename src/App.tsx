@@ -1,15 +1,25 @@
 import React from "react";
-import RemoveButton from "./components/RemoveButton";
+import NavBar from "./components/NavBar";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CategoriesNavBar from "./components/CategoriesNavBar";
 
-export const CartContext = React.createContext({
-  items: [{ id: 1 }, { id: 2 }, { id: 3 }],
+let theme = createTheme({
+  palette: {
+    primary: {
+      main: "#E6E8E9",
+    },
+    secondary: {
+      main: "#091625",
+    },
+  },
 });
 
 function App() {
   return (
-    <CartContext.Provider value={{ items: [{ id: 1 }, { id: 2 }, { id: 3 }] }}>
-      <RemoveButton id={"12"} />
-    </CartContext.Provider>
+    <ThemeProvider theme={theme}>
+      <NavBar />
+      <CategoriesNavBar />
+    </ThemeProvider>
   );
 }
 
