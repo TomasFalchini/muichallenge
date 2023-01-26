@@ -10,13 +10,7 @@ import Badge from "@mui/material/Badge";
 import SearchIcon from "@mui/icons-material/Search";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-
-const Image = styled("img")(({ theme }) => ({
-  margin: 20,
-  marginLeft: 92,
-  height: 48,
-  width: 172,
-}));
+import Logo from "./Logo";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -57,7 +51,7 @@ export default function NavBar() {
   return (
     <AppBar position="static" color="secondary">
       <Toolbar>
-        <Image className="" src="./LOGO2.jpg" alt="" />
+        <Logo />
         <Search>
           <SearchIconWrapper>
             <SearchIcon color="secondary" fontSize="medium" />

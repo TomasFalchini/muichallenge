@@ -1,41 +1,44 @@
-import React from "react";
+import * as React from "react";
 
-function Select() {
-  return <div>Select</div>;
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+
+interface Props {
+  defValue: string;
+  options: string[];
 }
 
-export default Select;
+export default function SelectSmall({ defValue, options }: Props) {
+  const [value, setValue] = React.useState<string>(defValue);
 
-/* 
+  const handleChange = (event: SelectChangeEvent) => {
+    setValue(event.target.value);
+  };
 
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import NativeSelect from '@mui/material/NativeSelect';
-
-export default function NativeSelectDemo() {
   return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel variant="standard" htmlFor="uncontrolled-native">
-          Age
-        </InputLabel>
-        <NativeSelect
-          defaultValue={30}
-          inputProps={{
-            name: 'age',
-            id: 'uncontrolled-native',
-          }}
-        >
-          <option value={10}>Ten</option>
-          <option value={20}>Twenty</option>
-          <option value={30}>Thirty</option>
-        </NativeSelect>
-      </FormControl>
-    </Box>
+    <Select
+      id="demo-select-small"
+      value={value}
+      onChange={handleChange}
+      sx={{
+        border: 0,
+        padding: 0,
+        height: 16,
+        outline: "none",
+        fontSize: 14,
+      }}
+    >
+      <MenuItem value={defValue}>
+        <em>{defValue}</em>
+      </MenuItem>
+      {options.map((el) => {
+        return (
+          <MenuItem value={el}>
+            <em>{el}</em>
+          </MenuItem>
+        );
+      })}
+    </Select>
   );
 }
-
-
-*/

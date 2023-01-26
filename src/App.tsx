@@ -2,6 +2,8 @@ import React from "react";
 import NavBar from "./components/NavBar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CategoriesNavBar from "./components/CategoriesNavBar";
+import Footer from "./components/Footer";
+import YouMayAlsoLikeSection from "./components/YouMayAlsoLikeSection";
 
 let theme = createTheme({
   palette: {
@@ -19,6 +21,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <NavBar />
       <CategoriesNavBar />
+      <YouMayAlsoLikeSection />
+      <Footer />
     </ThemeProvider>
   );
 }
