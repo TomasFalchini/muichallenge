@@ -11,8 +11,8 @@ function YouMayAlsoLikeSection() {
       <Typography fontWeight={700} fontSize={24} marginBottom={"24px"}>
         You might also like
       </Typography>
-      <Grid container spacing={"24px"}>
-        <Grid item xs={12} md={6} lg={3}>
+      <Grid container spacing={"24px"} justifyItems="center">
+        <Grid item xs={12} md={6} lg={3} justifyItems="center">
           <AlsoLikeCard
             title="Unisex Short Sleeve T-Shirt"
             priceRange={[10, 25]}
