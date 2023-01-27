@@ -14,6 +14,7 @@ let theme = createTheme({
       main: "#091625",
     },
   },
+  typography: { fontFamily: ["Open Sans"].join(",") },
 });
 
 function App() {

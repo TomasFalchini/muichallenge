@@ -1,47 +1,50 @@
-import React from "react";
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { Box, CardActionArea } from "@mui/material";
 
-function AlsoLikeCard() {
-  return <div>AlsoLikeCard</div>;
+interface Props {
+  title: string;
+  priceRange: [number, number];
+  minimum: number;
 }
 
-export default AlsoLikeCard;
-
-/* 
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
-
-export default function MultiActionAreaCard() {
+function AlsoLikeCard({ title, priceRange, minimum }: Props) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 336, boxShadow: "none" }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
+          height="336"
+          width="336"
+          image={`https://source.unsplash.com/random/?Clothes&${Math.ceil(
+            Math.random() * 100
+          )}`}
+          alt="ropa"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
+          <Typography fontSize={16} fontWeight={700}>
+            {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography fontSize={15} fontWeight={600}>
+              ${priceRange[0]} - ${priceRange[1]}
+            </Typography>
+            <Typography fontSize={14} fontWeight={400}>
+              Minimum: {minimum}
+            </Typography>
+          </Box>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-      </CardActions>
     </Card>
   );
 }
 
-
-*/
+export default AlsoLikeCard;

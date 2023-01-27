@@ -3,18 +3,43 @@ import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 
 import React from "react";
+import AlsoLikeCard from "./AlsoLikeCard";
 
 function YouMayAlsoLikeSection() {
   return (
-    <Box>
-      <Typography fontWeight={700} fontSize={24}>
+    <Box sx={{ padding: "92px" }}>
+      <Typography fontWeight={700} fontSize={24} marginBottom={"24px"}>
         You might also like
       </Typography>
-      <Grid container spacing={"24px"} sx={{ height: "434px" }}>
-        <Grid item xs={12} md={6} lg={3}></Grid>
-        <Grid item xs={12} md={6} lg={3}></Grid>
-        <Grid item xs={12} md={6} lg={3}></Grid>
-        <Grid item xs={12} md={6} lg={3}></Grid>
+      <Grid container spacing={"24px"}>
+        <Grid item xs={12} md={6} lg={3}>
+          <AlsoLikeCard
+            title="Unisex Short Sleeve T-Shirt"
+            priceRange={[10, 25]}
+            minimum={24}
+          />
+        </Grid>
+        <Grid item xs={12} md={6} lg={3}>
+          <AlsoLikeCard
+            title="Unisex Short Sleeve T-Shirt"
+            priceRange={[10, 25]}
+            minimum={24}
+          />
+        </Grid>
+        <Grid item xs={12} md={6} lg={3}>
+          <AlsoLikeCard
+            title="Unisex Short Sleeve T-Shirt"
+            priceRange={[10, 25]}
+            minimum={24}
+          />
+        </Grid>
+        <Grid item xs={12} md={6} lg={3}>
+          <AlsoLikeCard
+            title="Unisex Short Sleeve T-Shirt"
+            priceRange={[10, 25]}
+            minimum={24}
+          />
+        </Grid>
       </Grid>
     </Box>
   );
