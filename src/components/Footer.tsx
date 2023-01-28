@@ -29,12 +29,12 @@ function Footer() {
         bottom: "0",
       }}
     >
-      <Grid container spacing={2}>
+      <Grid container spacing={"24px"}>
         <Grid
           item
           xs={12}
-          md={4}
-          lg={2}
+          md={6}
+          lg={3}
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -127,15 +127,14 @@ function Footer() {
         <Grid
           item
           xs={12}
-          md={8}
+          md={6}
           lg={3}
           sx={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "start",
-            justifyContent: "space-between",
             gap: "24px",
             padding: "20px",
+            paddingLeft: "94px",
           }}
         >
           <Typography fontSize={16} fontWeight={700}>
@@ -165,7 +164,6 @@ function Footer() {
             display: "flex",
             flexDirection: "column",
             alignItems: "start",
-            justifyContent: "space-between",
             gap: "24px",
             padding: "20px",
           }}
@@ -186,12 +184,11 @@ function Footer() {
         <Grid
           item
           xs={6}
-          lg={4}
+          lg={3}
           sx={{
             display: "flex",
             flexDirection: "column",
             alignItems: "start",
-            justifyContent: "space-between",
             gap: "24px",
             padding: "20px",
           }}

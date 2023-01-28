@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 
 const Text = styled(Typography)(({ theme }) => ({
   color: "secondary",
-  margin: 12,
+
   "&:hover": {
     textDecoration: "underline",
     cursor: "pointer",
@@ -22,14 +22,14 @@ function CategoriesNavBar() {
       color="primary"
       sx={{ boxShadow: "none", height: 64 }}
     >
-      <Toolbar>
+      <Toolbar disableGutters>
         <Box sx={{ flexGrow: 0 }} />
         <Box
           sx={{
             display: { xs: "none", md: "flex" },
-            alignItems: "space-between",
+            gap: "24px",
             margin: 24,
-            marginLeft: 9.2,
+            marginLeft: "92px",
           }}
         >
           <Text>All products</Text>

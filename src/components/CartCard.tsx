@@ -23,18 +23,21 @@ interface Props {
 
 function CartCard({ name, quantity, price, description }: Props) {
   return (
-    <Card sx={{ boxShadow: "none", width: "100%" }}>
+    <Card sx={{ width: "100%", marginBottom: "24px" }}>
       <CardActionArea
         sx={{
           width: "100%",
           display: "flex",
           padding: "24px",
+          paddingLeft: 0,
+          flexDirection: { xs: "column", sm: "row" },
         }}
       >
         <CardMedia
           sx={{
-            width: "120px",
-            height: "120px",
+            width: { xs: "360px", sm: "120px" },
+            height: { xs: "360px", sm: "120px" },
+            padding: { xs: "24px", sm: 0 },
           }}
           component="img"
           image={`https://source.unsplash.com/random/?Clothes&${Math.ceil(

@@ -7,12 +7,12 @@ import AlsoLikeCard from "./AlsoLikeCard";
 
 function YouMayAlsoLikeSection() {
   return (
-    <Box sx={{ padding: "92px" }}>
+    <Box sx={{ padding: { xs: "24px", md: "92px" } }}>
       <Typography fontWeight={700} fontSize={24} marginBottom={"24px"}>
         You might also like
       </Typography>
       <Grid container spacing={"24px"} justifyItems="center">
-        <Grid item xs={12} md={6} lg={3} justifyItems="center">
+        <Grid item xs={12} md={6} lg={3} justifySelf="center">
           <AlsoLikeCard
             title="Unisex Short Sleeve T-Shirt"
             priceRange={[10, 25]}

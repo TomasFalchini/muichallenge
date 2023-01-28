@@ -21,8 +21,6 @@ const Search = styled("div")(({ theme }) => ({
   "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.85),
   },
-
-  margin: 24,
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -49,10 +47,27 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function NavBar() {
   return (
-    <AppBar position="static" color="secondary">
-      <Toolbar>
+    <AppBar
+      position="static"
+      color="secondary"
+      sx={{
+        paddingX: { xs: "6px", md: "20px" },
+        paddingY: "20px",
+        paddingLeft: { xs: "24px", md: "92px" },
+      }}
+    >
+      <Toolbar
+        disableGutters
+        sx={{
+          minHeight: { xs: 0, md: 0 },
+        }}
+      >
         <Logo />
-        <Search>
+        <Search
+          sx={{
+            marginX: { xs: "6px", md: "24px" },
+          }}
+        >
           <SearchIconWrapper>
             <SearchIcon color="secondary" fontSize="medium" />
           </SearchIconWrapper>
@@ -64,9 +79,9 @@ export default function NavBar() {
         <Box sx={{ flexGrow: 1 }} />
         <Box
           sx={{
-            display: { xs: "none", md: "flex" },
+            display: "flex",
             alignItems: "center",
-            marginRight: 9.2,
+            marginRight: { xs: "12px", md: "92px" },
           }}
         >
           <IconButton
@@ -76,7 +91,13 @@ export default function NavBar() {
             sx={{ display: "flex", gap: 1.5 }}
           >
             <PersonOutlineOutlinedIcon />
-            <Typography>Sign in</Typography>
+            <Typography
+              sx={{
+                display: { xs: "none", md: "inline" },
+              }}
+            >
+              Sign in
+            </Typography>
           </IconButton>
 
           <IconButton
@@ -88,7 +109,13 @@ export default function NavBar() {
             <Badge badgeContent={17} color="primary">
               <LocalMallOutlinedIcon />
             </Badge>
-            <Typography>Cart</Typography>
+            <Typography
+              sx={{
+                display: { xs: "none", md: "inline" },
+              }}
+            >
+              Cart
+            </Typography>
           </IconButton>
         </Box>
       </Toolbar>
