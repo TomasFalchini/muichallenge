@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import YouMayAlsoLikeSection from "./components/YouMayAlsoLikeSection";
 import { Grid } from "@mui/material";
 import OrderSummary from "./components/OrderSummary";
+import CartCard from "./components/CartCard";
 
 let theme = createTheme({
   palette: {
@@ -32,7 +33,11 @@ function App() {
           paddingTop: "32px",
         }}
       >
-        <Grid item xs={12} lg={9}></Grid>
+        <Grid item xs={12} lg={9}>
+          <CartCard name={"Basic T-Shirt"} quantity={10} price={13.5} />
+          <CartCard name={"Basic T-Shirt"} quantity={10} price={13.5} />
+          <CartCard name={"Basic T-Shirt"} quantity={10} price={13.5} />
+        </Grid>
         <Grid item xs={12} lg={3}>
           <OrderSummary itemsQuantity={3} total={3560} />
         </Grid>
