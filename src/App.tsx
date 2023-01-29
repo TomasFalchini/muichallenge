@@ -4,10 +4,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CategoriesNavBar from "./components/CategoriesNavBar";
 import Footer from "./components/Footer";
 import YouMayAlsoLikeSection from "./components/YouMayAlsoLikeSection";
-import { Grid } from "@mui/material";
-import OrderSummary from "./components/OrderSummary";
-import CartCard from "./components/CartCard";
 import CartItems from "./components/CartItems";
+import { CartContextProvider } from "./hooks/CartContext";
 
 let theme = createTheme({
   palette: {
@@ -23,13 +21,15 @@ let theme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <NavBar />
-      <CategoriesNavBar />
-      <CartItems />
-      <YouMayAlsoLikeSection />
-      <Footer />
-    </ThemeProvider>
+    <CartContextProvider>
+      <ThemeProvider theme={theme}>
+        <NavBar />
+        <CategoriesNavBar />
+        <CartItems />
+        <YouMayAlsoLikeSection />
+        <Footer />
+      </ThemeProvider>
+    </CartContextProvider>
   );
 }
 

@@ -1,46 +1,34 @@
-import React from "react";
-import IconButton from "@mui/material/IconButton";
-import DeleteIcon from "@mui/icons-material/Delete";
+import React, { useContext } from "react";
+import { CartContext } from "../hooks/CartContext";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import { Button, Typography } from "@mui/material";
 
 interface Props {
-  id: string;
+  id: number;
 }
 
 function RemoveButton({ id }: Props) {
-  const removeItem = () => {};
+  const { removeItem } = useContext(CartContext);
+
+  const remove = () => {
+    removeItem(id);
+  };
+
   return (
-    <IconButton aria-label="delete" size="small">
-      <DeleteIcon fontSize="inherit" />
-    </IconButton>
+    <Button
+      color="secondary"
+      sx={{
+        padding: 0,
+      }}
+      onClick={remove}
+    >
+      <DeleteOutlineIcon />
+
+      <Typography fontSize={12} fontWeight={600}>
+        Remove
+      </Typography>
+    </Button>
   );
 }
 
 export default RemoveButton;
-
-/* 
-
-import * as React from 'react';
-import Stack from '@mui/material/Stack';
-import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
-
-export default function IconButtonSizes() {
-  return (
-    <Stack direction="row" alignItems="center" spacing={1}>
-      <IconButton aria-label="delete" size="small">
-        <DeleteIcon fontSize="inherit" />
-      </IconButton>
-      <IconButton aria-label="delete" size="small">
-        <DeleteIcon fontSize="small" />
-      </IconButton>
-      <IconButton aria-label="delete" size="large">
-        <DeleteIcon />
-      </IconButton>
-      <IconButton aria-label="delete" size="large">
-        <DeleteIcon fontSize="inherit" />
-      </IconButton>
-    </Stack>
-  );
-}
-
-*/

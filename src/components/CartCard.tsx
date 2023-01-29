@@ -13,15 +13,28 @@ import {
   ListItemText,
 } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import RemoveButton from "./RemoveButton";
+import QuantitySelect from "./QuantitySelect";
 
 interface Props {
   name: string;
   quantity: number;
   price: number;
   description?: string[];
+  id: number;
+  image: string;
+  stock: number;
 }
 
-function CartCard({ name, quantity, price, description }: Props) {
+function CartCard({
+  name,
+  quantity,
+  price,
+  description,
+  id,
+  image,
+  stock,
+}: Props) {
   return (
     <Card sx={{ width: "100%", marginBottom: "24px" }}>
       <CardActionArea
@@ -40,9 +53,7 @@ function CartCard({ name, quantity, price, description }: Props) {
             padding: { xs: "24px", sm: 0 },
           }}
           component="img"
-          image={`https://source.unsplash.com/random/?Clothes&${Math.ceil(
-            Math.random() * 100
-          )}`}
+          image={image}
           alt="ropa"
         />
         <CardContent
@@ -63,32 +74,19 @@ function CartCard({ name, quantity, price, description }: Props) {
             <Typography fontSize={18} fontWeight={700}>
               {name}
             </Typography>
-            <Typography fontSize={16} fontWeight={600}>
-              Quantity: {quantity}
-            </Typography>
+            <QuantitySelect quantity={quantity} stock={stock} id={id} />
             {description ? (
               <List sx={{ width: "100%", maxWidth: 360 }}>
                 {description.map((el) => {
                   return (
                     <ListItem>
-                      <ListItemText primary={description} />
+                      <ListItemText primary={el} />
                     </ListItem>
                   );
                 })}
               </List>
             ) : null}
-            <Button
-              color="secondary"
-              sx={{
-                padding: 0,
-              }}
-            >
-              <DeleteOutlineIcon />
-
-              <Typography fontSize={12} fontWeight={600}>
-                Remove
-              </Typography>
-            </Button>
+            <RemoveButton id={id} />
           </Box>
           <Box
             display="flex"
@@ -98,14 +96,14 @@ function CartCard({ name, quantity, price, description }: Props) {
             gap="14px"
           >
             <Typography fontSize={18} fontWeight={700}>
-              ${price}
+              ${price.toFixed(2)}
             </Typography>
             <Box display="flex">
               <Typography fontSize={18} fontWeight={600}>
                 {"Total:"}
               </Typography>
               <Typography fontSize={18} fontWeight={700}>
-                ${price * quantity}
+                ${(price * quantity).toFixed(2)}
               </Typography>
             </Box>
           </Box>

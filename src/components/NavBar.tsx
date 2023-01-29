@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -11,6 +11,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import Logo from "./Logo";
+import { CartContext } from "../hooks/CartContext";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -46,6 +47,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function NavBar() {
+  const { state } = useContext(CartContext);
+
   return (
     <AppBar
       position="static"
@@ -106,7 +109,7 @@ export default function NavBar() {
             color="inherit"
             sx={{ display: "flex", gap: 1.5 }}
           >
-            <Badge badgeContent={17} color="primary">
+            <Badge badgeContent={state.length} color="primary">
               <LocalMallOutlinedIcon />
             </Badge>
             <Typography

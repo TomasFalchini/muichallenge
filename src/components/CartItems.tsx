@@ -1,9 +1,12 @@
 import { Box, Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../hooks/CartContext";
 import CartCard from "./CartCard";
 import OrderSummary from "./OrderSummary";
 
 function CartItems() {
+  const { state } = useContext(CartContext);
+
   return (
     <Box
       sx={{
@@ -16,12 +19,29 @@ function CartItems() {
       </Typography>
       <Grid container spacing={2}>
         <Grid item xs={12} lg={9}>
-          <CartCard name={"Basic T-Shirt"} quantity={10} price={13.5} />
-          <CartCard name={"Basic T-Shirt"} quantity={10} price={13.5} />
-          <CartCard name={"Basic T-Shirt"} quantity={10} price={13.5} />
+          {state.map((el) => {
+            return (
+              <CartCard
+                key={el.id}
+                name={el.name}
+                quantity={el.quantity}
+                price={el.price}
+                description={el.description}
+                id={el.id}
+                image={el.image}
+                stock={el.stock}
+              />
+            );
+          })}
         </Grid>
         <Grid item xs={12} lg={3}>
-          <OrderSummary itemsQuantity={3} total={3560} />
+          <OrderSummary
+            itemsQuantity={state.length}
+            total={state.reduce(
+              (prev, curr) => prev + curr.price * curr.quantity,
+              0
+            )}
+          />
         </Grid>
       </Grid>
     </Box>

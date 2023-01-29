@@ -45,7 +45,7 @@ function OrderSummary({ itemsQuantity, total }: Props) {
           Total:
         </Typography>
         <Typography fontWeight={700} fontSize={24}>
-          ${total}
+          ${total.toFixed(2)}
         </Typography>
       </Box>
       <Button
