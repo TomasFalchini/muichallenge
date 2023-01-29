@@ -8,7 +8,7 @@ interface Products {
   pack: boolean;
   name: string;
   stock: number;
-  description?: string[];
+  description?: Array<Array<string>>;
   price: number;
   quantity: number;
   image: string;
@@ -20,14 +20,14 @@ const cart = [
   {
     pack: true,
     name: "My Christmas pack",
-    stock: 80,
+    stock: 12,
     description: [
-      "Cardboard box: (container)",
-      "Unisex Short Sleeve T-Shirt (Green, Small)",
-      "Basic bottle (Blue)",
+      ["Cardboard box:", "(container)"],
+      ["Unisex Short Sleeve T-Shirt", "(Green, Small)"],
+      ["Basic bottle", "(Blue)"],
     ],
     price: 71.2,
-    quantity: 50,
+    quantity: 5,
     image:
       "https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     id: 1,
@@ -35,9 +35,9 @@ const cart = [
   {
     pack: false,
     name: "Basic T-Shirt",
-    stock: 36,
+    stock: 7,
     price: 13.5,
-    quantity: 10,
+    quantity: 3,
     image:
       "https://images.unsplash.com/photo-1578021127722-1f1ff95b429e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     id: 2,
@@ -45,9 +45,9 @@ const cart = [
   {
     pack: false,
     name: "Woman Bottle",
-    stock: 36,
+    stock: 5,
     price: 13.5,
-    quantity: 10,
+    quantity: 2,
     image:
       "https://images.unsplash.com/photo-1585083969600-495ee7e3604b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     id: 3,

@@ -20,7 +20,7 @@ interface Props {
   name: string;
   quantity: number;
   price: number;
-  description?: string[];
+  description?: Array<string[]>;
   id: number;
   image: string;
   stock: number;
@@ -51,6 +51,7 @@ function CartCard({
             width: { xs: "360px", sm: "120px" },
             height: { xs: "360px", sm: "120px" },
             padding: { xs: "24px", sm: 0 },
+            alignSelf: { xs: "center", sm: "flex-start" },
           }}
           component="img"
           image={image}
@@ -62,6 +63,7 @@ function CartCard({
             display: "flex",
             justifyContent: "space-between",
             paddingTop: 0,
+            flexDirection: { xs: "column", sm: "row" },
           }}
         >
           <Box
@@ -74,17 +76,42 @@ function CartCard({
             <Typography fontSize={18} fontWeight={700}>
               {name}
             </Typography>
-            <QuantitySelect quantity={quantity} stock={stock} id={id} />
+            <Typography fontSize={16} fontWeight={600}>
+              Quantity:
+              <QuantitySelect quantity={quantity} stock={stock} id={id} />
+            </Typography>
+
             {description ? (
-              <List sx={{ width: "100%", maxWidth: 360 }}>
-                {description.map((el) => {
-                  return (
-                    <ListItem>
-                      <ListItemText primary={el} />
-                    </ListItem>
-                  );
-                })}
-              </List>
+              <Box sx={{ width: "100%", maxWidth: 390 }}>
+                <ul>
+                  {description.map((el) => {
+                    return (
+                      <li>
+                        <Box
+                          display="flex"
+                          sx={{
+                            flexDirection: { xs: "column", md: "row" },
+                            gap: { xs: "2px", md: "12px" },
+                          }}
+                        >
+                          <Typography fontSize={14} fontWeight={600}>
+                            {el[0]}
+                          </Typography>
+                          <Typography
+                            sx={{
+                              opacity: "0.8",
+                            }}
+                            fontSize={14}
+                            fontWeight={500}
+                          >
+                            {el[1]}
+                          </Typography>
+                        </Box>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </Box>
             ) : null}
             <RemoveButton id={id} />
           </Box>

@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import MenuItem from "@mui/material/MenuItem";
+import MenuList from "@mui/material/MenuList";
 
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { Box } from "@mui/material";
@@ -23,10 +24,10 @@ export default function SelectSmall({ quantity, stock, id }: Props) {
   };
 
   let menuItems = [];
-  for (let i = 0; i < stock; i++) {
+  for (let i = 1; i <= stock; i++) {
     menuItems.push(
       <MenuItem value={i}>
-        <em>{i}</em>
+        <em>{i === stock ? "Max. stock:" + i : i}</em>
       </MenuItem>
     );
   }
@@ -47,6 +48,7 @@ export default function SelectSmall({ quantity, stock, id }: Props) {
       <MenuItem value={quantity}>
         <em>{quantity}</em>
       </MenuItem>
+
       {menuItems}
     </Select>
   );

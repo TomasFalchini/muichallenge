@@ -13,7 +13,12 @@ interface Props {
 
 function AlsoLikeCard({ title, priceRange, minimum }: Props) {
   return (
-    <Card sx={{ maxWidth: 336, boxShadow: "none" }}>
+    <Card
+      sx={{
+        maxWidth: { xs: "100%", md: 336 },
+        boxShadow: "none",
+      }}
+    >
       <CardActionArea>
         <CardMedia
           component="img"

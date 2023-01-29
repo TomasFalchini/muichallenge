@@ -24,8 +24,8 @@ function Footer() {
     <Box
       sx={{
         bgcolor: "primary",
-        p: "90px",
-        paddingBottom: "0",
+        p: { xs: "24px", md: "90px" },
+        paddingBottom: { xs: "0px", md: "0px" },
         bottom: "0",
       }}
     >
@@ -33,7 +33,7 @@ function Footer() {
         <Grid
           item
           xs={12}
-          md={6}
+          sm={6}
           lg={3}
           sx={{
             display: "flex",
@@ -127,7 +127,7 @@ function Footer() {
         <Grid
           item
           xs={12}
-          md={6}
+          sm={6}
           lg={3}
           sx={{
             display: "flex",
@@ -212,21 +212,23 @@ function Footer() {
       </Grid>
       <Box
         sx={{
-          marginTop: "110px",
-          heigth: 123,
+          marginTop: { xs: "24px", md: "110px" },
           display: "flex",
+          flexDirection: { xs: "column", md: "row" },
           justifyContent: "space-between",
-          marginBottom: "72px",
+          marginBottom: { xs: "24px", md: "72px" },
         }}
       >
-        <Typography gutterBottom>
+        <Typography fontSize={14} gutterBottom>
           © 2022 Customer Products. All rights reserved.
         </Typography>
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            width: 362,
+            maxWidth: 362,
+            gap: "12px",
+            scale: { xs: "0.9", sm: "1" },
           }}
         >
           <Box

@@ -12,28 +12,28 @@ function YouMayAlsoLikeSection() {
         You might also like
       </Typography>
       <Grid container spacing={"24px"} justifyItems="center">
-        <Grid item xs={12} md={6} lg={3} justifySelf="center">
+        <Grid item xs={12} sm={6} lg={3} justifySelf="center">
           <AlsoLikeCard
             title="Unisex Short Sleeve T-Shirt"
             priceRange={[10, 25]}
             minimum={24}
           />
         </Grid>
-        <Grid item xs={12} md={6} lg={3}>
+        <Grid item xs={12} sm={6} lg={3}>
           <AlsoLikeCard
             title="Unisex Short Sleeve T-Shirt"
             priceRange={[10, 25]}
             minimum={24}
           />
         </Grid>
-        <Grid item xs={12} md={6} lg={3}>
+        <Grid item xs={12} sm={6} lg={3}>
           <AlsoLikeCard
             title="Unisex Short Sleeve T-Shirt"
             priceRange={[10, 25]}
             minimum={24}
           />
         </Grid>
-        <Grid item xs={12} md={6} lg={3}>
+        <Grid item xs={12} sm={6} lg={3}>
           <AlsoLikeCard
             title="Unisex Short Sleeve T-Shirt"
             priceRange={[10, 25]}
