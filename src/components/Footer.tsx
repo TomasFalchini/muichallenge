@@ -216,7 +216,7 @@ function Footer() {
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           justifyContent: "space-between",
-          marginBottom: { xs: "24px", md: "72px" },
+          paddingBottom: { xs: "24px", md: "72px" },
         }}
       >
         <Typography fontSize={14} gutterBottom>

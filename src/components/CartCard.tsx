@@ -36,7 +36,14 @@ function CartCard({
   stock,
 }: Props) {
   return (
-    <Card sx={{ width: "100%", marginBottom: "24px" }}>
+    <Card
+      sx={{
+        width: "100%",
+        marginBottom: "24px",
+        boxShadow: "none",
+        borderBottom: "1px solid #09162550",
+      }}
+    >
       <CardActionArea
         sx={{
           width: "100%",
