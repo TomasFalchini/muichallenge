@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "../hooks/CartContext";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+
 import { Button, Typography } from "@mui/material";
 
 interface Props {
@@ -16,9 +17,11 @@ function RemoveButton({ id }: Props) {
 
   return (
     <Button
+      disableElevation
       color="secondary"
       sx={{
         padding: 0,
+        fontSize: "12px",
       }}
       onClick={remove}
     >

@@ -1,11 +1,12 @@
 import React from "react";
+import { Route, Router, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import CategoriesNavBar from "./components/CategoriesNavBar";
 import Footer from "./components/Footer";
-import YouMayAlsoLikeSection from "./components/YouMayAlsoLikeSection";
-import CartItems from "./components/CartItems";
+
 import { CartContextProvider } from "./hooks/CartContext";
+import Cart from "./components/Cart";
+import SignIn from "./components/SignIn";
 
 let theme = createTheme({
   palette: {
@@ -16,7 +17,12 @@ let theme = createTheme({
       main: "#091625",
     },
   },
-  typography: { fontFamily: ["Open Sans"].join(",") },
+  typography: {
+    fontFamily: ["Open Sans"].join(","),
+    button: {
+      textTransform: "none",
+    },
+  },
 });
 
 function App() {
@@ -24,9 +30,10 @@ function App() {
     <CartContextProvider>
       <ThemeProvider theme={theme}>
         <NavBar />
-        <CategoriesNavBar />
-        <CartItems />
-        <YouMayAlsoLikeSection />
+        <Routes>
+          <Route path="/" element={<Cart />} />
+          <Route path="/sign-in" element={<SignIn />} />
+        </Routes>
         <Footer />
       </ThemeProvider>
     </CartContextProvider>

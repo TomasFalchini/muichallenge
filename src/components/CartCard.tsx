@@ -113,7 +113,16 @@ function CartCard({
                 </ul>
               </Box>
             ) : null}
-            <RemoveButton id={id} />
+            <Box display="flex" alignItems="center">
+              {description?.length ? (
+                <Button>
+                  <Typography fontWeight={600} fontSize={12} color="secondary">
+                    Edit pack |
+                  </Typography>
+                </Button>
+              ) : null}
+              <RemoveButton id={id} />
+            </Box>
           </Box>
           <Box
             display="flex"

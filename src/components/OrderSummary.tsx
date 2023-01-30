@@ -54,6 +54,7 @@ function OrderSummary({ itemsQuantity, total }: Props) {
         sx={{
           backgroundColor: "#3A4451",
           borderRadius: "8px",
+          border: "2px solid #091625",
 
           padding: "12px",
           marginBottom: "12px",

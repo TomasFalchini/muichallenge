@@ -23,7 +23,7 @@ function Footer() {
   return (
     <Box
       sx={{
-        bgcolor: "primary",
+        backgroundColor: "#E6E8E9",
         p: { xs: "24px", md: "90px" },
         paddingBottom: { xs: "0px", md: "0px" },
         bottom: "0",
@@ -238,7 +238,14 @@ function Footer() {
               alignItems: "center",
             }}
           >
-            <Typography fontSize={14} sx={{ height: 16 }} gutterBottom>
+            <Typography
+              fontSize={14}
+              sx={{
+                height: 16,
+                marginRight: "4px",
+              }}
+              gutterBottom
+            >
               Region:
             </Typography>
             <SelectSmall

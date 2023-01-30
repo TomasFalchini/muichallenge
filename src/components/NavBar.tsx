@@ -68,7 +68,7 @@ export default function NavBar() {
         <Logo />
         <Search
           sx={{
-            marginX: { xs: "6px", md: "24px" },
+            marginX: { xs: "6px", md: "68px" },
           }}
         >
           <SearchIconWrapper>
@@ -102,7 +102,6 @@ export default function NavBar() {
               Sign in
             </Typography>
           </IconButton>
-
           <IconButton
             size="large"
             aria-label="show 17 new notifications"

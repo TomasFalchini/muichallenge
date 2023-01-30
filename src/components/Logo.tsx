@@ -13,7 +13,7 @@ function Logo() {
     <Image
       sx={{
         display: { xs: "none", sm: "inline" },
-
+        
         minWidth: { xs: "102px", md: "172px" },
       }}
       className=""

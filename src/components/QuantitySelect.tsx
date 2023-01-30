@@ -1,11 +1,9 @@
 import * as React from "react";
 
-import MenuItem from "@mui/material/MenuItem";
-import MenuList from "@mui/material/MenuList";
+import Typography from "@mui/material/Typography";
 
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { Box } from "@mui/material";
 import { CartContext } from "../hooks/CartContext";
+import styled from "@emotion/styled";
 
 interface Props {
   quantity: number;
@@ -13,12 +11,31 @@ interface Props {
   id: number;
 }
 
+const Selects = styled("select")(({ theme }) => ({
+  padding: "0",
+  backgroundColor: "transparent",
+  border: "transparent",
+  textAlign: "start",
+  fontSize: "16px",
+  fontWeight: "700",
+  width: "38px",
+  textDecoration: "underline",
+}));
+
+const Options = styled("option")(({ theme }) => ({
+  height: "100%",
+  padding: "0",
+  backgroundColor: "transparent",
+  border: "transparent",
+  textAlign: "end",
+}));
+
 export default function SelectSmall({ quantity, stock, id }: Props) {
   const [value, setValue] = React.useState<number>(quantity);
 
   const { changeQuantity } = React.useContext(CartContext);
 
-  const handleChange = (event: SelectChangeEvent) => {
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setValue(parseInt(event.target.value));
     changeQuantity(id, parseInt(event.target.value));
   };
@@ -26,30 +43,31 @@ export default function SelectSmall({ quantity, stock, id }: Props) {
   let menuItems = [];
   for (let i = 1; i <= stock; i++) {
     menuItems.push(
-      <MenuItem value={i}>
-        <em>{i === stock ? "Max. stock:" + i : i}</em>
-      </MenuItem>
+      <Options value={i}>
+        <em>{i === stock ? "Max:" + i : i}</em>
+      </Options>
     );
   }
 
   return (
-    <Select
+    <Selects
       id="demo-select-small"
       value={value.toString()}
       onChange={handleChange}
-      sx={{
-        border: 0,
-        padding: 0,
-        height: 16,
-        outline: "none",
-        fontSize: 14,
-      }}
     >
-      <MenuItem value={quantity}>
-        <em>{quantity}</em>
-      </MenuItem>
+      <Options value={quantity}>
+        <Typography
+          fontSize={16}
+          fontWeight={700}
+          sx={{
+            textDecoration: "underlined",
+          }}
+        >
+          {quantity}
+        </Typography>
+      </Options>
 
       {menuItems}
-    </Select>
+    </Selects>
   );
 }
